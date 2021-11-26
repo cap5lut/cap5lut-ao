@@ -1,14 +1,33 @@
-package net.cap5lut.ao.netty.ao.packet.client;
+package net.cap5lut.ao.netty.ao.protocol;
 
-import io.netty.buffer.ByteBuf;
-import net.cap5lut.ao.netty.ao.AoBuf;
-import net.cap5lut.ao.netty.ao.packet.PacketDecoder;
-import net.cap5lut.ao.netty.ao.packet.PacketDecoder_old;
+import net.cap5lut.ao.netty.ao.packet.client.AoClientPacket;
+import net.cap5lut.ao.netty.ao.packet.client.BuddyAddPacket;
+import net.cap5lut.ao.netty.ao.packet.client.BuddyRemovePacket;
+import net.cap5lut.ao.netty.ao.packet.client.CharacterLookupPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ChatCommandPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ClientModeGetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ClientModeSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.LoginRequestPacket;
+import net.cap5lut.ao.netty.ao.packet.client.LoginSelectPacket;
+import net.cap5lut.ao.netty.ao.packet.client.OnlineStatusSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PingPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelAcceptPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelInvitePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelKickAllPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelKickPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelLeavePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateMessageSendPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelClientModeSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelDataSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.protocol.AoDataBuf;
+import net.cap5lut.ao.netty.ao.protocol.AoPacketDecoder;
 import net.cap5lut.ao.netty.ao.packet.UnknownPacket;
 
-public class _ClientPacketDecoder extends PacketDecoder<AoClientPacket> {
+public class AoClientPacketDecoder extends AoPacketDecoder<AoClientPacket> {
     @Override
-    protected AoClientPacket readPacket(AoBuf in, int type, int length) {
+    protected AoClientPacket readPacket(AoDataBuf in, int type, int length) {
         return switch (type) {
             case BuddyAddPacket.TYPE -> new BuddyAddPacket(in.readLong(), in.readString());
             case BuddyRemovePacket.TYPE -> new BuddyRemovePacket(in.readLong());

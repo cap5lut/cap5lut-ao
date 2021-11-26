@@ -1,12 +1,38 @@
-package net.cap5lut.ao.netty.ao.packet.server;
+package net.cap5lut.ao.netty.ao.protocol;
 
 import io.netty.channel.ChannelHandlerContext;
-import net.cap5lut.ao.netty.ao.AoBuf;
-import net.cap5lut.ao.netty.ao.packet.PacketEncoder;
+import net.cap5lut.ao.netty.ao.packet.server.AoServerPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BroadcastPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BuddyAddedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BuddyRemovedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterListPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterReplyPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterUnknownPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterUpdatePacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginFailurePacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginSeedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginSuccessPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PongPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelCharacterJoinedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelCharacterLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelInviteRefusedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelInvitedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelKickedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateMessageReceivedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelJoinedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.SimpleSystemMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.SystemMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.VicinityMessagePacket;
+import net.cap5lut.ao.netty.ao.protocol.AoDataBuf;
+import net.cap5lut.ao.netty.ao.protocol.AoPacketEncoder;
 
-public class _ServerPacketEncoder extends PacketEncoder<AoServerPacket> {
+public class AoServerPacketEncoder extends AoPacketEncoder<AoServerPacket> {
     @Override
-    protected AoBuf encode(ChannelHandlerContext ctx, AoServerPacket packet, AoBuf out) {
+    protected AoDataBuf encode(ChannelHandlerContext ctx, AoServerPacket packet, AoDataBuf out) {
         if (packet instanceof BroadcastPacket p) {
             out
                     .writeString(p.text())

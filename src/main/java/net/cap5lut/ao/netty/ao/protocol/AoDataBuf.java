@@ -1,13 +1,13 @@
-package net.cap5lut.ao.netty.ao;
+package net.cap5lut.ao.netty.ao.protocol;
 
 import io.netty.buffer.ByteBuf;
 
 import java.nio.charset.StandardCharsets;
 
-public class AoBuf {
+public class AoDataBuf {
     private final ByteBuf buf;
 
-    public AoBuf(ByteBuf buf) {
+    public AoDataBuf(ByteBuf buf) {
         this.buf = buf;
     }
 
@@ -33,7 +33,7 @@ public class AoBuf {
         return value;
     }
 
-    public AoBuf writeByteArrayRaw(byte... value) {
+    public AoDataBuf writeByteArrayRaw(byte... value) {
         buf.writeBytes(value);
         return this;
     }
@@ -42,7 +42,7 @@ public class AoBuf {
         return buf.readInt();
     }
 
-    public AoBuf writeInt(int value) {
+    public AoDataBuf writeInt(int value) {
         buf.writeInt(value);
         return this;
     }
@@ -56,9 +56,9 @@ public class AoBuf {
         return value;
     }
 
-    public AoBuf writeIntArray(int... value) {
+    public AoDataBuf writeIntArray(int... value) {
         writeShort((short) value.length);
-        for (var v: value) {
+        for (var v : value) {
             writeInt(v);
         }
         return this;
@@ -68,7 +68,7 @@ public class AoBuf {
         throw new AssertionError();
     }
 
-    public AoBuf writeLong(long value) {
+    public AoDataBuf writeLong(long value) {
         throw new AssertionError();
     }
 
@@ -81,9 +81,9 @@ public class AoBuf {
         return value;
     }
 
-    public AoBuf writeLongArray(long... value) {
+    public AoDataBuf writeLongArray(long... value) {
         writeShort((short) value.length);
-        for (var v: value) {
+        for (var v : value) {
             writeLong(v);
         }
         return this;
@@ -93,7 +93,7 @@ public class AoBuf {
         throw new AssertionError();
     }
 
-    public AoBuf writeNumber(long value, int bytes) {
+    public AoDataBuf writeNumber(long value, int bytes) {
         throw new AssertionError();
     }
 
@@ -101,7 +101,7 @@ public class AoBuf {
         return buf.readShort();
     }
 
-    public AoBuf writeShort(short value) {
+    public AoDataBuf writeShort(short value) {
         buf.writeShort(value);
         return this;
     }
@@ -113,7 +113,7 @@ public class AoBuf {
         return new String(encoded, StandardCharsets.ISO_8859_1);
     }
 
-    public AoBuf writeString(String value) {
+    public AoDataBuf writeString(String value) {
         final var encoded = value.getBytes(StandardCharsets.ISO_8859_1);
         writeShort((short) encoded.length);
         buf.writeBytes(encoded);
@@ -129,9 +129,9 @@ public class AoBuf {
         return value;
     }
 
-    public AoBuf writeStringArray(String... value) {
+    public AoDataBuf writeStringArray(String... value) {
         writeShort((short) value.length);
-        for (var v: value) {
+        for (var v : value) {
             writeString(v);
         }
         return this;
@@ -141,7 +141,7 @@ public class AoBuf {
         throw new AssertionError();
     }
 
-    public AoBuf writeTextBlob(String blob) {
+    public AoDataBuf writeTextBlob(String blob) {
         throw new AssertionError();
     }
 }

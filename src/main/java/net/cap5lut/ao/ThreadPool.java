@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
 public class ThreadPool {
@@ -22,6 +23,12 @@ public class ThreadPool {
     public static <T> CompletableFuture<T> supplyAsync(SupplierThrowing<T> supplier, Executor executor) {
         return CompletableFuture.supplyAsync(supplier, executor);
     }
+
+    public static CompletableFuture<?> schedule(RunnableThrowing task, long delay, TimeUnit unit) {
+        throw new AssertionError();
+    }
+
+
 
     @FunctionalInterface
     public interface RunnableThrowing extends Runnable {

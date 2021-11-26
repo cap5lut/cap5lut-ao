@@ -1,14 +1,30 @@
-package net.cap5lut.ao.netty.ao.packet.client;
+package net.cap5lut.ao.netty.ao.protocol;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import net.cap5lut.ao.netty.ao.AoBuf;
-import net.cap5lut.ao.netty.ao.packet.PacketEncoder;
-import net.cap5lut.ao.netty.ao.packet.PacketEncoder_old;
+import net.cap5lut.ao.netty.ao.packet.client.AoClientPacket;
+import net.cap5lut.ao.netty.ao.packet.client.BuddyAddPacket;
+import net.cap5lut.ao.netty.ao.packet.client.BuddyRemovePacket;
+import net.cap5lut.ao.netty.ao.packet.client.CharacterLookupPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ChatCommandPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ClientModeGetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.ClientModeSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.LoginRequestPacket;
+import net.cap5lut.ao.netty.ao.packet.client.LoginSelectPacket;
+import net.cap5lut.ao.netty.ao.packet.client.OnlineStatusSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PingPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelAcceptPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelInvitePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelKickAllPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelKickPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelLeavePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PrivateChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelClientModeSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelDataSetPacket;
+import net.cap5lut.ao.netty.ao.packet.client.PublicChannelMessagePacket;
 
-public class _ClientPacketEncoder extends PacketEncoder<AoClientPacket> {
+public class AoClientPacketEncoder extends AoPacketEncoder<AoClientPacket> {
     @Override
-    protected AoBuf encode(ChannelHandlerContext ctx, AoClientPacket packet, AoBuf out) {
+    protected AoDataBuf encode(ChannelHandlerContext ctx, AoClientPacket packet, AoDataBuf out) {
         if (packet instanceof BuddyAddPacket p) {
             out
                     .writeLong(p.characterId())
@@ -35,8 +51,8 @@ public class _ClientPacketEncoder extends PacketEncoder<AoClientPacket> {
         } else if (packet instanceof LoginRequestPacket p) {
             out
                     .writeInt(p.unknownInt())
-                    .writeString(p.username())
-                    .writeString(p.key());
+                    .writeString(p.account())
+                    .writeString(p.hash());
         } else if (packet instanceof LoginSelectPacket p) {
             out
                     .writeLong(p.characterId());

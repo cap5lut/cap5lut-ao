@@ -1,14 +1,35 @@
-package net.cap5lut.ao.netty.ao.packet.server;
+package net.cap5lut.ao.netty.ao.protocol;
 
-import io.netty.buffer.ByteBuf;
-import net.cap5lut.ao.netty.ao.AoBuf;
-import net.cap5lut.ao.netty.ao.packet.PacketDecoder;
-import net.cap5lut.ao.netty.ao.packet.PacketDecoder_old;
+import net.cap5lut.ao.netty.ao.packet.server.AoServerPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BroadcastPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BuddyAddedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.BuddyRemovedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterListPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterReplyPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterUnknownPacket;
+import net.cap5lut.ao.netty.ao.packet.server.CharacterUpdatePacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginFailurePacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginSeedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.LoginSuccessPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PongPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelCharacterJoinedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelCharacterLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelInvitedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelKickedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.PrivateMessageReceivedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelJoinedPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelLeftPacket;
+import net.cap5lut.ao.netty.ao.packet.server.PublicChannelMessagePacket;
+import net.cap5lut.ao.netty.ao.packet.server.SimpleSystemMessagePacket;
+import net.cap5lut.ao.netty.ao.protocol.AoDataBuf;
+import net.cap5lut.ao.netty.ao.protocol.AoPacketDecoder;
 import net.cap5lut.ao.netty.ao.packet.UnknownPacket;
 
-public class _ServerPacketDecoder extends PacketDecoder<AoServerPacket> {
+public class AoServerPacketDecoder extends AoPacketDecoder<AoServerPacket> {
     @Override
-    protected AoServerPacket readPacket(AoBuf in, int type, int length) {
+    protected AoServerPacket readPacket(AoDataBuf in, int type, int length) {
         return switch (type) {
             case BroadcastPacket.TYPE -> new BroadcastPacket(in.readString(), in.readString(), in.readString());
             case BuddyAddedPacket.TYPE -> new BuddyAddedPacket(in.readLong(), in.readInt(), in.readString());

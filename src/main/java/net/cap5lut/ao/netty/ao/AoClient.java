@@ -6,8 +6,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import net.cap5lut.ao.entities.Server;
-import net.cap5lut.ao.netty.ao.packet.client._ClientPacketEncoder;
-import net.cap5lut.ao.netty.ao.packet.server._ServerPacketDecoder;
+import net.cap5lut.ao.netty.ao.protocol.AoClientPacketEncoder;
+import net.cap5lut.ao.netty.ao.protocol.AoServerPacketDecoder;
 
 public class AoClient implements AutoCloseable {
     private final EventLoopGroup workers;
@@ -22,8 +22,8 @@ public class AoClient implements AutoCloseable {
                     @Override
                     protected void initChannel(NioSocketChannel channel) throws Exception {
                         channel.pipeline().addLast(
-                                new _ServerPacketDecoder(),
-                                new _ClientPacketEncoder(),
+                                new AoServerPacketDecoder(),
+                                new AoClientPacketEncoder(),
                                 new AoClientHandler()
                         );
                     }
