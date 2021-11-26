@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b07924b9-eaf8-4038-924a-0c17f5368941" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/AoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/events/ConnectedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/events/DisconnectedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/events/ErrorEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/AoClientBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/AoClientBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/AoClient2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/ReconnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/ReconnectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/cap5lut/ao/netty/ao/n/Test.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cap5lut-ao" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21HEd7AAxIW2nsr6luot78GvUe9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.cap5lut.ao.netty.ao.n.events" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b07924b9-eaf8-4038-924a-0c17f5368941" name="Changes" comment="" />
+      <created>1637589697730</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637589697730</updated>
+      <workItem from="1637589700626" duration="1198000" />
+      <workItem from="1637851384192" duration="147000" />
+      <workItem from="1637935694878" duration="655000" />
+      <workItem from="1637936374469" duration="608000" />
+      <workItem from="1637937747415" duration="971000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/cap5lut-ao" />
+    </ignored-roots>
+  </component>
+</project>

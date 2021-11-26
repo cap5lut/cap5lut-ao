@@ -8,7 +8,7 @@ public class ReconnectHandler {
     private final ScheduledExecutorService scheduler;
     private final AtomicInteger tries = new AtomicInteger(0);
 
-    public ReconnectHandler(ScheduledExecutorService scheduler, AoClient2 client) {
+    public ReconnectHandler(ScheduledExecutorService scheduler, AoClient client) {
         this.scheduler = scheduler;
         client.onConnect().subscribe(this::onConnect);
         client.onDisconnect().subscribe(this::onDisconnect);

@@ -2,7 +2,7 @@ package net.cap5lut.ao.netty.ao;
 
 import net.cap5lut.ao.entities.Credentials;
 import net.cap5lut.ao.entities.Server;
-import net.cap5lut.ao.netty.ao.n.AoClient2;
+import net.cap5lut.ao.netty.ao.n.AoClient;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,7 +20,7 @@ public class AoClientBuilder {
         return this;
     }
 
-    public CompletableFuture<AoClient2> login() {
-        return CompletableFuture.supplyAsync(() -> new AoClient2(server, credentials));
+    public CompletableFuture<AoClient> login() {
+        return CompletableFuture.supplyAsync(() -> new AoClient(server, credentials));
     }
 }
